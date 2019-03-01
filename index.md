@@ -1,10 +1,10 @@
-# Team Feral
+# Welcome to Team Feral's Website!
 
 Wellcome to Team Feral.
 
 ## Discord
 
-Our discord is the main way to comunicate with us.
+Our Discord is the hub of everything Team Feral.
 
 
 ## YouTube
