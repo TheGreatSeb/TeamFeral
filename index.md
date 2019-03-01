@@ -13,12 +13,13 @@
 
 Wellcome to Team Feral.
 
-<iframe src="https://discordapp.com/widget?id=318689808316760065&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-
 ## Discord
 
 Our Discord is the hub of everything Team Feral.
 
+* Join our discord server here:
+
+<iframe src="https://discordapp.com/widget?id=318689808316760065&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
 
 ## YouTube
 
@@ -27,5 +28,4 @@ We stribe to upload a video every friday, and be one of the first to cover news 
 * Our latest videos here 
 <iframe width="600" height="340" src="http://www.youtube.com/embed?max-results=1&controls=0&showinfo=0&rel=0&listType=user_uploads&list=UC-t8x73RwA6aCR47367JEkg" frameborder="0" allowfullscreen></iframe>
 
-Hello hello
 
