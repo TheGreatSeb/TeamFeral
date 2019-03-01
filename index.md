@@ -13,6 +13,8 @@
 
 Wellcome to Team Feral.
 
+<iframe src="https://discordapp.com/widget?id=318689808316760065&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+
 ## Discord
 
 Our Discord is the hub of everything Team Feral.
