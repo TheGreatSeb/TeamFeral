@@ -21,7 +21,17 @@ body {
   margin: 0px;
   background: #f1f1f1;
 }
+p.normal {
+  font-style: regular;
+}
 
+p.italic {
+  font-style: italic;
+}
+
+p.bold {
+  font-style: bold;
+}
 /* Header menu box */
 ul {
   list-style-type: none;
@@ -89,7 +99,11 @@ li.dropdown {
 /* Header style */
 .header {
   background-color: #f1f1f1;
-  padding: 150px;
+  background-image: url(backgrounds/background6.jpg);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 125px;
   margin-top: 50px;
   text-align: center;
 }
@@ -167,7 +181,7 @@ li.dropdown {
 
 <body style="background-color:#ffffff">
 <ul>
-    <img src="b&w.png" alt="Logo" style="width: 35px;height: 35px;">
+    <img src="assets/b&w.png" alt="Logo" style="width: 35px;height: 35px;">
     <li><a class="active" href="#home">Home</a></li>
     <li><a href="#news">News</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -181,8 +195,8 @@ li.dropdown {
 </ul>
 
 <div class="header">
-    <h1>Team Feral</h1>
-    <p><i>Small gaming community</i></p>
+    <h1 style="font-size: 400%;font-weight:75; color: white">Team Feral</h1>
+    <p style="color:white"><i>Small gaming community</i></p>
 </div>
 
 <div class="centercolumn">
