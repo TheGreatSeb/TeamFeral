@@ -21,49 +21,63 @@ body {
   margin: 0px;
   background: #f1f1f1;
 }
+
+/* Header menu box */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  max-height: 50px;
+  min-height: 50px;
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
+/* Header menu orientation */
 li {
   float: left;
 }
 
+/* Header menu Text */
 li a, .dropbtn {
   display: inline-block;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
+/* Header hover over text */
 li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  font-weight: bold;
+  transition-duration: 0.2s;
 }
 
 li.dropdown {
   display: inline-block;
 }
 
+/* Header dropdown box */
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
+/* Header dropdown text */
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  text-align: left;
+  text-align: center;
 }
 
 .dropdown-content a:hover {background-color: #f1f1f1}
@@ -72,21 +86,41 @@ li.dropdown {
   display: block;
 }
 
-
 /* Header style */
 .header {
   background-color: #f1f1f1;
   padding: 150px;
+  margin-top: 50px;
   text-align: center;
 }
 
 /* Center text style */
 .centercolumn {   
   float: center;
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 50px;
+}
+
+/* Left column style */
+.leftcolumn {   
+  float: center;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* Right column style */
+.rightcolumn {   
+  float: center;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  text-align: center;
 }
 
 /* Footer style */
@@ -95,8 +129,37 @@ li.dropdown {
   text-align: center;
   background: #333;
   margin-top: 50px;
+  column-count: 2;
+  column-gap: 50px;
 
 }
+
+/* Button style */
+.button {
+  background-color: #ffffff; 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+}
+
+.button1 {
+    border-radius: 8px;
+    border: 1px solid rgb(189, 189, 189);
+}
+.button1:hover {
+    border-radius: 8px;
+    box-shadow: 0 0px 25px 0 rgba(0, 0, 0, 0.24),0 0px 500px 0 rgba(0, 0, 0, 0.19);
+    background-color: #d11239;
+    border: 1px solid #d11239;
+    color: #ffffff;
+    }
 
 </style>
 </head>
@@ -104,15 +167,16 @@ li.dropdown {
 
 <body style="background-color:#ffffff">
 <ul>
+    <img src="b&w.png" alt="Logo" style="width: 35px;height: 35px;">
     <li><a class="active" href="#home">Home</a></li>
     <li><a href="#news">News</a></li>
     <li><a href="#contact">Contact</a></li>
     <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn">Social</a>
         <div class="dropdown-content">
-            <a href="#">YouTube</a>
-            <a href="#">Twitter</a>
-            <a href="#">Twitch</a>
+            <a href="https://www.youtube.com/channel/UC-t8x73RwA6aCR47367JEkg">YouTube</a>
+            <a href="https://twitter.com/TeamFeralOW">Twitter</a>
+            <a href="https://twitch.com/TeamFeralOW">Twitch</a>
         </div>
 </ul>
 
@@ -123,11 +187,32 @@ li.dropdown {
 
 <div class="centercolumn">
     <h1 style="text-align: center">Team Feral</h1>
-    <p>So this is a long text. Blah blah</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p><a href="url">link text</a></p>
+    <button class="button button1">Button</button>
+</div>
+
+<div class="leftcolumn">
+    <h1 style="text-align: center">Discord</h1>
+    <img src="Left.png" alt="Discord image" style="width: 75%;height: 200px">
+    <p>The discord is the hub of everything Team Feral. So be sure to join and take part in the amazing community of Team Feral</p>
+    <button class="button button1">Discord invite link</button>
+</div>
+
+<div class="rightcolumn">
+    <h1 style="text-align: center">YouTube</h1>
+    <img src="right.png" alt="YouTube image" style="width: 75%;height: 200px">
+    <p>We have a YouTube channel where we upload videos.</p>
+    <button class="button button1">Subscribe</button>
 </div>
 
 <div class="footer">
-    <h2 style="color:white">Footer</h2>
+    <p style="color:white">things<br> things <br> things <br> </p>
 </div>          
 
 </body>
