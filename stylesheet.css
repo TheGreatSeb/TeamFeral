@@ -81,7 +81,6 @@ li.dropdown {
 /* Header style */
 .header {
   background-color: #f1f1f1;
-  background-image: url(backgrounds/background6.jpg);
   background-position: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -146,13 +145,86 @@ li.dropdown {
 }
 
 .button1 {
-    border-radius: 8px;
-    border: 1px solid rgb(189, 189, 189);
+border-radius: 8px;
+border: 1px solid rgb(189, 189, 189);
 }
+
 .button1:hover {
-    border-radius: 8px;
-    box-shadow: 0 0px 25px 0 rgba(0, 0, 0, 0.24),0 0px 500px 0 rgba(0, 0, 0, 0.19);
-    background-color: #123c97;
-    border: 1px solid #123c97;
-    color: #ffffff;
+border-radius: 8px;
+box-shadow: 0 0px 25px 0 rgba(0, 0, 0, 0.24),0 0px 500px 0 rgba(0, 0, 0, 0.19);
+background-color: #123c97;
+border: 1px solid #123c97;
+color: #ffffff;
+}
+
+/* forms */
+input[type=text], select, textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
     }
+      
+      input[type=submit] {
+        border-radius: 8px;
+        box-shadow: 0 0px 25px 0 rgba(0, 0, 0, 0.24),0 0px 500px 0 rgba(0, 0, 0, 0.19);
+        background-color: #ffffff;
+        border: 1px solid rgb(189, 189, 189);
+        color: #000000;
+        float: right;
+        padding: 12px 20px;
+        transition-duration: 0.2s;
+      }
+      
+      input[type=submit]:hover {
+        border-radius: 8px;
+        box-shadow: 0 0px 25px 0 rgba(0, 0, 0, 0.24),0 0px 500px 0 rgba(0, 0, 0, 0.19);
+        background-color: #123c97;
+        border: 1px solid #123c97;
+        color: #ffffff;
+      }
+      
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 40px;
+        float: center;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.24),0 0px 50px 0 rgba(0, 0, 0, 0.19);
+      }
+      
+      .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+      }
+      
+      .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Makes the form reacive */
+      @media screen and (max-width: 600px) {
+        .col-25, .col-75, input[type=submit] {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
