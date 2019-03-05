@@ -1,7 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,400i,700');
+
 body {
   font-family: Nunito;
   margin: 0px;
-  background: #f1f1f1;
+  background: #ffffff;
 }
 p.normal {
   font-style: regular;
