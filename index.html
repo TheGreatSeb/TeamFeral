@@ -1,74 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135436584-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-135436584-1');
-  </script>
-
-  <link rel="stylesheet" href="stylesheet.css">
-
-  <title>Team Feral</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
 </head>
-
-
 <body>
-  <ul>
-    <a href="index.html"><img src="assets/b&w.png" alt="Logo" style="width: 50px;height: 50px; float: right "></a>
-    <li><a style="font-weight: bold" class="active" href="index.html">Home</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li class="dropdown">
-      <a>Social</a>
-      <div class="dropdown-content">
-        <a href="youtube.html">YouTube</a>
-        <a href="twitter.html">Twitter</a>
-        <a href="twitter.html">Twitch</a>
-      </div>
-  </ul>
+    <div id="search">
+        <input id="search-field" type="text" name="search-field" onkeypress="return search(event)"/>
+    </div>
+    <div class="container">
+        <div id="clock"></div>
+        <div class="weather-container">
+            <div class="row">
+                <div id="weather-description"class="inline"></div>
+                <div class="inline">-</div>
+                <div id="temp" class="inline"></div>
+            </div>
+        </div>
+        <div class="bookmark-container">
+            <div class="bookmark-set">
+                <div class="bookmark-title">Daily</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://inbox.google.com/" target="_blank">Gmail</a>
+                    <a class="bookmark" href="https://www.lectio.dk/lectio/680/login.aspx" target="_blank">Lectio</a>
+                    <a class="bookmark" href="https://drive.google.com/" target="_blank">Drive</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Media</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://youtube.com" target="_blank">Youtube</a>
+                    <a class="bookmark" href="http://127.0.0.1:32400/web/index.html" target="_blank">Plex</a>
+                    <a class="bookmark" href="https://photos.google.com/" target="_blank">Google Photos</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+            <div class="bookmark-title">Reddit</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://reddit.com/r/dankmemes" target="_blank">/r/Dankmemes</a>
+                    <a class="bookmark" href="https://reddit.com/r/pcmasterrace" target="_blank">/r/pcmasterrace</a>
+                    <a class="bookmark" href="https://reddit.com/r/askreddit" target="_blank">/r/askreddit</a>
+                    <a class="bookmark" href="https://reddit.com/r/battlestations" target="_blank">/r/battlestations</a>
+                    <a class="bookmark" href="https://reddit.com/r/unixporn" target="_blank">/r/unixporn</a>
+                    
+                    <a class="bookmark" href="https://reddit.com/r/all" target="_blank">/r/all</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Social</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://twitter.com" target="_blank">Twitter</a>
+                    <a class="bookmark" href="https://messenger.com" target="_blank">Messenger</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        // Search on enter key event
+        function search(e) {
+            if (e.keyCode == 13) {
+                var val = document.getElementById("search-field").value;
+                window.open("https://google.com/search?q=" + val);
+            }
+        }
+        // Get current time and format
+        function getTime() {
+            let date = new Date(),
+                min = date.getMinutes(),
+                sec = date.getSeconds(),
+                hour = date.getHours();
 
-  <div style="background-image: url(backgrounds/background6.jpg);" class="header">
-    <h1 style="font-size: 400%;font-weight:75; color: white">Team Feral</h1>
-    <p style="color:white"><i>Small gaming community</i></p>
-  </div>
+            return "" + 
+                (hour < 10 ? ("0" + hour) : hour) + ":" + 
+                (min < 10 ? ("0" + min) : min) + ":" + 
+                (sec < 10 ? ("0" + sec) : sec);
+        }
 
-  <div class="centercolumn">
-    <h1 style="text-align: center">Team Feral</h1>
-    <p>Team Feral is a small comunity of like minded members who love playing all sorts of games, even if you play games on the PC or on console, The Team Feral comunity is for everybody. If you think this is something for you, join our discord for a lively and active gaming comunity today.</p>
-    <p><a href="test.html">Test</a></p>
-    <button class="button button1">Button</button>
-  </div>
+        window.onload = () => {
+            let xhr = new XMLHttpRequest();
+            // Request to open weather map
+            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=4737316&units=celsius&appid=e5b292ae2f9dae5f29e11499c2d82ece');
+            xhr.onload = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        let json = JSON.parse(xhr.responseText);
+                        console.log(json);
+                        document.getElementById("temp").innerHTML = json.main.temp.toFixed(0) + " C";
+                        document.getElementById("weather-description").innerHTML = json.weather[0].description;
+                    } else {
+                        console.log('error msg: ' + xhr.status);
+                    }
+                }
+            }
+            xhr.send();
+            // Set up the clock
+            document.getElementById("clock").innerHTML = getTime();
+            // Set clock interval to tick clock
+            setInterval( () => {
+                document.getElementById("clock").innerHTML = getTime();
+            },100);
+        }
 
-  <div class="leftcolumn">
-    <h1 style="text-align: center">Discord</h1>
-    <iframe src="https://discordapp.com/widget?id=318689808316760065&theme=dark" width="350" height="500"
-      allowtransparency="true" frameborder="0"></iframe>
-    <p>The discord is the hub of everything Team Feral. So be sure to join and take part in the amazing community of
-      Team Feral</p>
-    <button class="button button1">Discord invite link</button><button class="button button1">Learn more</button>
-  </div>
-
-  <div class="rightcolumn">
-    <h1 style="text-align: center">YouTube</h1>
-    <iframe width="350" height="200" src="https://www.youtube.com/embed/fdlF_Z7y2yM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
-    <br><i style="text-align: center">Our latest video</i>
-    <p>We have a YouTube channel where we upload videos.</p>
-    <button class="button button1">Subscribe</button><button class="button button1">Learn more</button>
-  </div>
-
-  <div class="footer">
-    <p style="color:white">things<br> things <br> things <br> </p>
-  </div>
-
+        document.addEventListener("keydown", event => {
+            if (event.keyCode == 32) {          // Spacebar code to open search
+                document.getElementById('search').style.display = 'flex';
+                document.getElementById('search-field').focus();
+            } else if (event.keyCode == 27) {   // Esc to close search
+                document.getElementById('search-field').value = '';
+                document.getElementById('search-field').blur();
+                document.getElementById('search').style.display = 'none';
+            }
+        });
+    </script>
 </body>
-
 </html>
